@@ -1,0 +1,502 @@
+/* =====================================================
+   VARIÁVEIS DE TEMA
+===================================================== */
+
+:root {
+    --background: #F7F7F7;
+    --card: #FFFFFF;
+    --text: #1E1E1E;
+    --secondary-text: #666666;
+    --border: #E5E5E5;
+    --primary: #111111;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode {
+    --background: #0F0F0F;
+    --card: #1A1A1A;
+    --text: #FFFFFF;
+    --secondary-text: #C7C7C7;
+    --border: #2B2B2B;
+    --primary: #FFFFFF;
+    --shadow: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+    transition: .3s ease;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--card);
+    box-shadow: 0 3px 15px var(--shadow);
+}
+
+.logo-container {
+    padding: 18px;
+    text-align: center;
+}
+
+.logo-container h1 {
+    font-size: 2rem;
+}
+
+
+/* =====================================================
+   MENU DAS CATEGORIAS
+===================================================== */
+
+.category-nav {
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 15px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-button {
+    border: none;
+    background: var(--card);
+    color: var(--text);
+
+    padding: 12px 18px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    font-size: .95rem;
+    font-weight: 700;
+
+    box-shadow: 0 3px 12px var(--shadow);
+
+    transition: .25s ease;
+}
+
+.category-button:hover {
+    transform: translateY(-2px);
+}
+
+.category-button.active {
+    background: var(--primary);
+    color: var(--background);
+}
+
+
+/* =====================================================
+   CARROSSEL DE BANNERS
+===================================================== */
+
+.banner-section {
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+.banner-slider {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    box-shadow: 0 6px 25px var(--shadow);
+}
+
+.banner-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+
+    display: block;
+
+    transition: opacity .5s ease;
+}
+
+.banner-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 40px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.70),
+        rgba(0,0,0,.15)
+    );
+
+    color: white;
+}
+
+.banner-overlay h2 {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+}
+
+.banner-overlay p {
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+
+/* =====================================================
+   INDICADORES DO CARROSSEL
+===================================================== */
+
+.banner-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.banner-dot {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #BBBBBB;
+
+    transition: .3s ease;
+}
+
+.banner-dot.active {
+    background: var(--primary);
+}
+
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+===================================================== */
+
+#menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 20px 100px;
+}
+
+
+/* =====================================================
+   CATEGORIAS
+===================================================== */
+
+.menu-section {
+    margin-bottom: 70px;
+    scroll-margin-top: 180px;
+}
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+
+    background: var(--border);
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   GRID DOS PRODUTOS
+===================================================== */
+
+.products-grid {
+    display: grid;
+    gap: 25px;
+}
+
+
+/* =====================================================
+   CARD DOS PRODUTOS
+===================================================== */
+
+.product-card {
+    background: var(--card);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px var(--shadow);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+
+    display: block;
+}
+
+.product-content {
+    padding: 20px;
+}
+
+.product-name {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   MODAL DO PRODUTO
+===================================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.75);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 5000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    background: var(--card);
+    color: var(--text);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,.25);
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 420px;
+
+    object-fit: cover;
+}
+
+.modal-content h2 {
+    padding: 25px 25px 10px;
+    font-size: 2rem;
+}
+
+.modal-content p {
+    padding: 0 25px;
+    color: var(--secondary-text);
+    line-height: 1.7;
+}
+
+.modal-price {
+    padding: 25px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.95);
+
+    cursor: pointer;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   VOLTAR AO TOPO
+===================================================== */
+
+.back-to-top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: var(--background);
+
+    cursor: pointer;
+
+    display: none;
+
+    font-size: 1.4rem;
+
+    box-shadow: 0 5px 20px var(--shadow);
+
+    transition: .25s ease;
+
+    z-index: 2000;
+}
+
+.back-to-top:hover {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   TABLETS
+===================================================== */
+
+@media (min-width: 768px) {
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 1100px) {
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .banner-image {
+        height: 260px;
+    }
+
+    .banner-overlay {
+        padding: 25px;
+    }
+
+    .banner-overlay h2 {
+        font-size: 1.6rem;
+    }
+
+    .banner-overlay p {
+        font-size: .95rem;
+    }
+
+    .logo-container h1 {
+        font-size: 1.7rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .modal-image {
+        max-height: 300px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+}
